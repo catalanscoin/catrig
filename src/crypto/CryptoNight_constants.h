@@ -59,8 +59,7 @@ constexpr const uint32_t CRYPTONIGHT_HEAVY_ITER   = 0x40000;
 
 constexpr const size_t   CRYPTONIGHT_PICO_MEMORY = 256 * 1024;
 constexpr const uint32_t CRYPTONIGHT_PICO_MASK   = 0x1FFF0;
-constexpr const uint32_t CRYPTONIGHT_PICO_ITER   = 0x40000;
-constexpr const uint32_t CRYPTONIGHT_TRTL_ITER   = 0x10000;
+constexpr const uint32_t CRYPTONIGHT_PICO_ITER   = 0x10000;
 
 
 template<Algo ALGO> inline constexpr size_t cn_select_memory()           { return 0; }
@@ -145,7 +144,7 @@ template<> inline constexpr uint32_t cn_select_iter<CRYPTONIGHT_LITE, VARIANT_1>
 template<> inline constexpr uint32_t cn_select_iter<CRYPTONIGHT_HEAVY, VARIANT_0>()    { return CRYPTONIGHT_HEAVY_ITER; }
 template<> inline constexpr uint32_t cn_select_iter<CRYPTONIGHT_HEAVY, VARIANT_XHV>()  { return CRYPTONIGHT_HEAVY_ITER; }
 template<> inline constexpr uint32_t cn_select_iter<CRYPTONIGHT_HEAVY, VARIANT_TUBE>() { return CRYPTONIGHT_HEAVY_ITER; }
-template<> inline constexpr uint32_t cn_select_iter<CRYPTONIGHT_PICO, VARIANT_TRTL>()  { return CRYPTONIGHT_TRTL_ITER; }
+template<> inline constexpr uint32_t cn_select_iter<CRYPTONIGHT_PICO, VARIANT_TRTL>()  { return CRYPTONIGHT_PICO_ITER; }
 
 
 inline uint32_t cn_select_iter(Algo algorithm, Variant variant)
@@ -163,7 +162,7 @@ inline uint32_t cn_select_iter(Algo algorithm, Variant variant)
         return CRYPTONIGHT_XAO_ITER;
 
     case VARIANT_TRTL:
-        return CRYPTONIGHT_TRTL_ITER;
+        return CRYPTONIGHT_PICO_ITER;
 
     case VARIANT_RWZ:
     case VARIANT_ZLS:
@@ -185,7 +184,7 @@ inline uint32_t cn_select_iter(Algo algorithm, Variant variant)
         return CRYPTONIGHT_HEAVY_ITER;
 
     case CRYPTONIGHT_PICO:
-        return CRYPTONIGHT_TRTL_ITER;
+        return CRYPTONIGHT_PICO_ITER;
 
     default:
         break;
