@@ -61,6 +61,9 @@ constexpr const size_t   CRYPTONIGHT_PICO_MEMORY = 256 * 1024;
 constexpr const uint32_t CRYPTONIGHT_PICO_MASK   = 0x1FFF0;
 constexpr const uint32_t CRYPTONIGHT_PICO_ITER   = 0x10000;
 
+constexpr const size_t   CRYPTONIGHT_FEMTO_MEMORY = 96 * 1024;
+constexpr const uint32_t CRYPTONIGHT_FEMTO_MASK   = 0xBFF0;
+constexpr const uint32_t CRYPTONIGHT_FEMTO_ITER   = 0x6000;
 
 template<Algo ALGO> inline constexpr size_t cn_select_memory()           { return 0; }
 template<> inline constexpr size_t cn_select_memory<CRYPTONIGHT>()       { return CRYPTONIGHT_MEMORY; }
