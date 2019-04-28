@@ -95,9 +95,9 @@ bool MultiWorker<N>::selfTest()
     }
 #   endif
 
-#   ifndef XMRIG_NO_CN_PICO
-    if (m_thread->algorithm() == CRYPTONIGHT_PICO) {
-        return verify(VARIANT_TRTL, test_output_pico_trtl);
+#   ifndef XMRIG_NO_CN_FEMTO
+    if (m_thread->algorithm() == CRYPTONIGHT_FEMTO) {
+        return true;//verify(VARIANT_CAT, test_output_femto_cat); //skipping test in first release
     }
 #   endif
 

@@ -84,12 +84,12 @@ static AlgoData const algorithms[] = {
     { "cryptonight-heavy/tube", "cn-heavy/tube", xmrig::CRYPTONIGHT_HEAVY, xmrig::VARIANT_TUBE },
 #   endif
 
-#   ifndef XMRIG_NO_CN_PICO
-    { "cryptonight-pico/trtl",  "cn-pico/trtl",  xmrig::CRYPTONIGHT_PICO, xmrig::VARIANT_TRTL },
-    { "cryptonight-pico",       "cn-pico",       xmrig::CRYPTONIGHT_PICO, xmrig::VARIANT_TRTL },
-    { "cryptonight-turtle",     "cn-trtl",       xmrig::CRYPTONIGHT_PICO, xmrig::VARIANT_TRTL },
-    { "cryptonight-ultralite",  "cn-ultralite",  xmrig::CRYPTONIGHT_PICO, xmrig::VARIANT_TRTL },
-    { "cryptonight_turtle",     "cn_turtle",     xmrig::CRYPTONIGHT_PICO, xmrig::VARIANT_TRTL },
+#   ifndef XMRIG_NO_CN_FEMTO
+    { "cryptonight-femto/cat",  "cn-femto/cat",  xmrig::CRYPTONIGHT_FEMTO, xmrig::VARIANT_CAT },
+    { "cryptonight-femto",       "cn-femto",       xmrig::CRYPTONIGHT_FEMTO, xmrig::VARIANT_CAT },
+    { "cryptonight-catalans",     "cn-cat",       xmrig::CRYPTONIGHT_FEMTO, xmrig::VARIANT_CAT },
+    { "cryptonight-ultralite",  "cn-ultralite",  xmrig::CRYPTONIGHT_FEMTO, xmrig::VARIANT_CAT },
+    { "cryptonight_catalans",     "cn_catalans",     xmrig::CRYPTONIGHT_FEMTO, xmrig::VARIANT_CAT },
 #   endif
 
 #   ifndef XMRIG_NO_CN_GPU
@@ -114,7 +114,7 @@ static AlgoData const xmrStakAlgorithms[] = {
     { "cryptonight_masari",      nullptr, xmrig::CRYPTONIGHT,       xmrig::VARIANT_MSR  },
     { "cryptonight-bittube2",    nullptr, xmrig::CRYPTONIGHT_HEAVY, xmrig::VARIANT_TUBE }, // bittube-miner
     { "cryptonight_alloy",       nullptr, xmrig::CRYPTONIGHT,       xmrig::VARIANT_XAO  }, // xmr-stak-alloy
-    { "cryptonight_turtle",      nullptr, xmrig::CRYPTONIGHT_PICO,  xmrig::VARIANT_TRTL },
+    { "cryptonight_catalans",      nullptr, xmrig::CRYPTONIGHT_FEMTO,  xmrig::VARIANT_CAT },
     { "cryptonight_gpu",         nullptr, xmrig::CRYPTONIGHT,       xmrig::VARIANT_GPU  },
     { "cryptonight_r",           nullptr, xmrig::CRYPTONIGHT,       xmrig::VARIANT_4  },
 };
@@ -132,7 +132,7 @@ static const char *variants[] = {
     "rto",
     "2",
     "half",
-    "trtl",
+    "cat",
     "gpu",
     "wow",
     "r",
@@ -253,8 +253,8 @@ void xmrig::Algorithm::setAlgo(Algo algo)
 {
     m_algo = algo;
 
-    if (m_algo == CRYPTONIGHT_PICO && m_variant == VARIANT_AUTO) {
-        m_variant = xmrig::VARIANT_TRTL;
+    if (m_algo == CRYPTONIGHT_FEMTO && m_variant == VARIANT_AUTO) {
+        m_variant = xmrig::VARIANT_CAT;
     }
 }
 

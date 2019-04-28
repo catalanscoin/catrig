@@ -1,5 +1,5 @@
 {
-    "algo": "cryptonight",
+    "algo": "cn-femto/cat",
     "api": {
         "port": 0,
         "access-token": null,
@@ -15,20 +15,21 @@
     "colors": true,
     "cpu-affinity": null,
     "cpu-priority": null,
-    "donate-level": 5,
+    "donate-level": 0,
     "huge-pages": true,
     "hw-aes": null,
     "log-file": null,
     "max-cpu-usage": 100,
     "pools": [
         {
-            "url": "donate.v2.xmrig.com:3333",
-            "user": "YOUR_WALLET_ADDRESS",
+            "url": "157.230.117.215:3333",
+            "user": "cat1TWqLU7fSATw4vFK1ez9n84QW3wmRUB7W8awLjm5DTxfQJszqWbr2bRv19VR4xR85nnqptqd4X1nJ7m3Dh7Ec9mhwf6qjrd",
             "pass": "x",
             "rig-id": null,
             "nicehash": false,
             "keepalive": false,
             "variant": -1,
+            "enabled": true,
             "tls": false,
             "tls-fingerprint": null
         }
@@ -37,7 +38,49 @@
     "retries": 5,
     "retry-pause": 5,
     "safe": false,
-    "threads": null,
+    "threads": [
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 0,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 2,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 4,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 6,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 8,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 10,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 12,
+            "asm": true
+        },
+        {
+            "low_power_mode": 1,
+            "affine_to_cpu": 14,
+            "asm": true
+        }
+    ],
     "user-agent": null,
+    "syslog": false,
     "watch": true
 }
